@@ -1,0 +1,10 @@
+version: "3.8"
+services: 
+  db:
+    image: postgres 
+    container_name: postgres-container
+    environment: 
+      DB_PASS: 1379
+    restart: always
+  api:
+
