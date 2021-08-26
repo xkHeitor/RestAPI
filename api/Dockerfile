@@ -8,7 +8,7 @@ RUN apk update && apk add --no-cache git && yarn install --allow-root
 
 COPY . .
 
-RUN apk update && apk add --no-cache git && yarn sequelize db:migrate --allow-root
+RUN yarn sequelize db:migrate --allow-root
 
 EXPOSE 4000
 
