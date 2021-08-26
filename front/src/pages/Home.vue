@@ -31,10 +31,10 @@
 										<b-td>{{ formatDate(dev.datanascimento) }}	</b-td>
 										<b-td class="text-center">
 											<b-button-group size="sm" class="mr-1">
-												<b-button v-b-tooltip.hover title="Editar" @click="edit(dev)">
+												<b-button title="Editar" @click="edit(dev)">
 													<b-icon icon="tools" aria-hidden="true"></b-icon>
 												</b-button>
-												<b-button v-b-tooltip.hover title="Deletar" @click="remove(dev)">
+												<b-button title="Deletar" @click="remove(dev)">
 													<b-icon icon="X" aria-hidden="true"></b-icon>
 												</b-button>
 											</b-button-group>

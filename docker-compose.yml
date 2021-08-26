@@ -22,21 +22,22 @@ services:
       "./api"
     restart: always
     volumes: 
-      - ./api:/app/api
+      - ./api:/usr/potential-crud/api:delegated
     ports: 
       - "4000:4000"
     depends_on: 
       - db
     networks: 
       - rede1
-  # front:
-  #   build: 
-  #     "./front"
-  #   container_name: front
-  #   restart: always
-  #   volumes: 
-  #     - ./front:/app/front
-  #   ports: 
-  #     - "8080:8080"
-    # depends_on: 
-    #   - api
+
+  front:
+    container_name: front
+    build: 
+      "./front"
+    restart: always
+    volumes: 
+      - ./front:/usr/potential-crud/front
+    ports: 
+      - "8080:8080"
+    depends_on: 
+      - api
