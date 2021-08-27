@@ -40,27 +40,29 @@ API     : 4000
 FRONT   : 8080
 ```
 
-
 ## Informações adicionais
 
 API pode ser consumida através do endereço http://localhost:4000/developers.
+Para consumir a api, por causa do middleware, utilizar a 'Authorization' : 'pontential_crud_developers'.
 
 ```
-	- GET /developers				- Retorna todos os desenvolvedores
-	- GET /developers?querystring	- Retorna os desenvolvedores de acordo com o termo passado via querystring e paginação, exemplo: "?limit=1&page=2" limit quantos devs, e page a página atual.
-	- GET /developers/{id}			- Retorna os dados de um desenvolvedor pelo ID
-	- POST /developers				- Cria um novo desenvolvedor
-	- PUT /developers/{id}			- Altera os dados de um desenvolvedor
-	- DELETE /developers/{id}		- Remove um desenvolvedor
+	- POST /developers - Cria um novo desenvolvedor
+	- PUT /developers/{id} - Altera os dados de um desenvolvedor
+	- DELETE /developers/{id} - Remove um desenvolvedor
+	- GET /developers - Retorna todos os desenvolvedores
+	- GET /developers/{id} - Retorna os dados de um desenvolvedor pelo ID
+	- GET /developers?querystring - Retorna os desenvolvedores de acordo com o termo passado via querystring e paginação, exemplo: "?limit=1&page=2" limit quantos devs, e page a página atual.
 ```
 
 ## Documentação e Código fonte
 
 Aplicação elaborada e dividida em duas. 
 
+Backend baseado em express e sequelize com banco de dados em postgres.
+
 Frontend criado em vueJS SPA (single-page application).
 
-Backend baseado em express e sequelize com banco de dados em postgres.
+Os testes estão no diretório tests.
 
 ## License
 
