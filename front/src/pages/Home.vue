@@ -31,10 +31,10 @@
 										<b-td>{{ formatDate(dev.datanascimento) }}	</b-td>
 										<b-td class="text-center">
 											<b-button-group size="sm" class="mr-1">
-												<b-button title="Editar" @click="edit(dev)">
+												<b-button v-b-tooltip.hover :title="devs.length > 1 ? 'Editar' : ''" @click="edit(dev)">
 													<b-icon icon="tools" aria-hidden="true"></b-icon>
 												</b-button>
-												<b-button title="Deletar" @click="remove(dev)">
+												<b-button v-b-tooltip.hover :title="devs.length > 1 ? 'Deletar' : ''" @click="remove(dev)">
 													<b-icon icon="X" aria-hidden="true"></b-icon>
 												</b-button>
 											</b-button-group>
@@ -219,6 +219,7 @@
 			},
 
 			clean () {
+				this.formTitle	= 'Novo Desenvolvedor';
 				this.editing	= false;
 				this.dev 		= {
 					nome			: '',
