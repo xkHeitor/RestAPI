@@ -15,7 +15,7 @@ Clone este repositório
 
 ```bash
 git clone https://github.com/xkHeitor/RestAPI-Crud.git
-cd pontential-crud
+cd RestAPI-Crud
 ```
 
 Após fazer o clone do projeto, agora precisa startar. Para isso execute os scripts e prompt diferentes
