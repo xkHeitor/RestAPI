@@ -1,12 +1,11 @@
 # Potential-Crud
 
-Projeto REST API Crud, ambiente docker, contendo 3 container para, api, front e db.
-
-Este é um projeto contendo o código de um CRUD feito em NodeJS e Docker/Docker-compose.
+Projeto REST API Crud.
+Este é um projeto contendo o código de um CRUD feito em NodeJS.
 
 Um CRUD montado com:
-* [NodeJS v14.17](https://hub.docker.com/_/node?tab=description&page=1&ordering=last_updated).
-* [postgres v14](https://hub.docker.com/_/postgres).
+* [NodeJS v14.17]
+* [postgres v14]
 
 API desenvolvida em Node js utilizando o express v4.17.1
 
@@ -19,19 +18,14 @@ git clone https://github.com/xkHeitor/pontential-crud.git
 cd pontential-crud
 ```
 
-Após fazer o clone do projeto, agora precisa startar o docker para que builde e suba o projeto.
+Após fazer o clone do projeto, agora precisa startar. Para isso execute os scripts e prompt diferentes
 
 ```bash
-docker-compose up --build
+api.bat
+front.bat
 ```
 
 ## Utilização
-
-Ao terminar o processo de buildar e subir os containers, a aplicação já está pronta, mas primeiro é necessário utilizar o sequelize para executar as migrates.
-
-```bash
-docker exec api sh run_migrations.sh
-```
 
 A partir deste momento, o projeto está pronto para ser utilizado nas portas:
 
@@ -61,8 +55,6 @@ Aplicação elaborada e dividida em duas.
 Backend baseado em express e sequelize com banco de dados em postgres.
 
 Frontend criado em vueJS SPA (single-page application).
-
-Os testes estão no diretório tests.
 
 ## License
 

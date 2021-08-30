@@ -2,10 +2,11 @@ FROM node:16-alpine3.11
 
 WORKDIR /usr/potential-crud/api
 
-COPY package*.json ./
+COPY *.json ./
 
-RUN apk update && apk add --no-cache git && yarn install --allow-root
+RUN yarn global add sucrase
+RUN yarn install
 
 EXPOSE 4000
 
-CMD [ "yarn", "dev" ]
+CMD [ "yarn", "start" ]
