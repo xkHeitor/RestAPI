@@ -14,7 +14,7 @@ API desenvolvida em Node js utilizando o express v4.17.1
 Clone este repositório
 
 ```bash
-git clone https://github.com/xkHeitor/pontential-crud.git
+git clone https://github.com/xkHeitor/RestAPI-Crud.git
 cd pontential-crud
 ```
 
