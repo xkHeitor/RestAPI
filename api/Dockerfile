@@ -2,11 +2,16 @@ FROM node:16-alpine3.11
 
 WORKDIR /usr/potential-crud/api
 
-COPY *.json ./
+COPY package*.json ./
+COPY yarn.lock ./
+COPY .env ./
+COPY .sequelizerc ./
 
-RUN npm install yarn 
-RUN yarn global add sucrase
 RUN yarn install
+
+COPY . .
+
+RUN yarn sequelize db:migrate
 
 EXPOSE 4000
 

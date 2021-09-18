@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.9"
 networks: 
   rede1:
     driver:   
@@ -15,29 +15,29 @@ services:
       - "5432:5432"
     networks: 
       - rede1
-
-  # api:
-  #   container_name: api
-  #   build:
-  #     "./api"
-  #   restart: always
-  #   volumes: 
-  #     - ./api:/usr/potential-crud/api:delegated
-  #   ports: 
-  #     - "4000:4000"
-  #   # depends_on: 
-  #   #   - db
-  #   networks: 
-  #     - rede1
-
-  # front:
-  #   container_name: front
-  #   build: 
-  #     "./front"
-  #   restart: always
-  #   volumes: 
-  #     - ./front:/usr/potential-crud/front
-  #   ports: 
-  #     - "8080:8080"
-  #   depends_on: 
-  #     - api
+  api:
+    container_name: api
+    links: 
+      - db
+    depends_on:
+      - db
+    build:
+      context: ./api/
+      dockerfile: Dockerfile
+    restart: always
+    ports: 
+      - "4000:4000"
+    networks: 
+      - rede1
+    tty: true
+  front:
+    container_name: front
+    build: 
+      "./front"
+      
+    restart: always
+    ports: 
+      - "8080:8080"
+    links: 
+      - db
+      - api
