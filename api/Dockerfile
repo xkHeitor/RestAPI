@@ -4,6 +4,7 @@ WORKDIR /usr/potential-crud/api
 
 COPY *.json ./
 
+RUN npm install yarn 
 RUN yarn global add sucrase
 RUN yarn install
 
